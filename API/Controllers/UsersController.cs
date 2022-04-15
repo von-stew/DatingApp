@@ -33,16 +33,13 @@ namespace API.Controllers
         }
 
         //Test for git
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<AppUser>> DeleteUser(int id)
-        {
-            var data = await _context.Users.FindAsync(id);   
-            _context.Remove(data);
-            _context.SaveChanges();
-            return await _context.Users.FirstOrDefaultAsync();
-        }
-
-
-
+        // [HttpDelete("{id}")]
+        // public async Task<ActionResult<AppUser>> DeleteUser(int id)
+        // {
+        //     var data = await _context.Users.FindAsync(id);   
+        //     _context.Remove(data);
+        //     _context.SaveChanges();
+        //     return await _context.Users.FirstOrDefaultAsync();
+        // }
     }
 }
