@@ -29,6 +29,7 @@ namespace API
         public Startup(IConfiguration config)
         {
             _config = config;
+
         }
 
 
@@ -38,6 +39,10 @@ namespace API
             services.AddApplicationServices(_config);
             services.AddCors();
             services.AddControllers();
+            // services.AddSwaggerGen(c =>
+            // {
+            //     c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPIv5", Version = "v1" });
+            // });
             services.AddIdentityServices(_config);
 
         }
@@ -48,8 +53,8 @@ namespace API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPIv5 v1"));
+                // app.UseSwagger();
+                // app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPIv5 v1"));
             }
 
             app.UseHttpsRedirection();
